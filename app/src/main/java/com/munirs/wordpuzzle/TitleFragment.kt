@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.munirs.wordpuzzle.databinding.FragmentTitleBinding
 
@@ -24,7 +25,7 @@ class TitleFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_title,container,false)
 
         binding.btnPlay.setOnClickListener {
-            val action = TitleFragmentDirections.actionTitleFragmentToFragmentPuzzle()
+            val action :NavDirections = TitleFragmentDirections.actionTitleFragmentToFragmentPuzzle()
             view!!.findNavController().navigate(action)
         }
 
